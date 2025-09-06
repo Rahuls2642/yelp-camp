@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Shows</h1>
+     <ul>
+          <h2><%= campgro.title %></h2>
+          <h2><%= campgro.location %></h2>
+          <footer>
+            <a href="/campgrounds">All campground</a> <br>
+              <a href="/campgrounds/<%=campgro._id%>/edit">edit form</a>
+             <form action="/campgrounds/<%= campgro._id %>?_method=DELETE" method="POST">
+  <button>DELETE</button>
+</form>
+          </footer>
+        
+</body>
+
+    </ul>
+</body>
+</html>
