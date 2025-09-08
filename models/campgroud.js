@@ -3,9 +3,10 @@ const Schema=mongoose.Schema;
 
 const campgroundSchema=new Schema({
     title:String,
-    price:String,
+    image:String,
     descriptions:String,
-    location:String
+    location:String,
+    price:Number
 })
 
 module.exports=mongoose.model('Campground',campgroundSchema)

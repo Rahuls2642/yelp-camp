@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Shows</h1>
-     <ul>
-          <h2><%= campgro.title %></h2>
-          <h2><%= campgro.location %></h2>
-          <footer>
-            <a href="/campgrounds">All campground</a> <br>
-              <a href="/campgrounds/<%=campgro._id%>/edit">edit form</a>
-             <form action="/campgrounds/<%= campgro._id %>?_method=DELETE" method="POST">
-  <button>DELETE</button>
+<% layout('layouts/boilerplate') %>
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="card" style="width: 18rem;">
+  <img src="<%=campgro.image %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= campgro.title %></h5>
+    <p class="card-text"><%=campgro.descriptions %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-muted"><%= campgro.location %></li>
+    <li class="list-group-item"><%=campgro.price%>$/night</li>
+  </ul>
+  <div class="card-body">
+    <a class="card-link btn btn-warning" href="/campgrounds/<%=campgro._id%>/edit" class="card-link">Edit form</a>
+    <form class="d-inline" action="/campgrounds/<%= campgro._id %>?_method=DELETE" method="POST">
+  <button class="btn btn-danger" >DELETE</button>
 </form>
-          </footer>
-        
-</body>
+  </div>
+</div>
+  </div>
+</div>
 
-    </ul>
-</body>
-</html>
